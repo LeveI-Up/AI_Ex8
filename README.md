@@ -13,7 +13,7 @@ The player need to reach to the gate in order to get to the next level.
   * Option the switch between the 2 weapons - by clicking 1 or 2 on the keyboard
   * Scripts & effects for the guns - for switching & lights effects when the player shots
   * Added life to the enemies - when the enemy's health reaches 0, he dies
-  * Added HitEngineState: in this state the enemy cought the player and can go and destroy the engine
+  * Added HitEngineState: in this state the enemy cought the player and can go and destroy the engine [here]https://github.com/LeveI-Up/AI_Ex8/blob/main/Assets/Scripts/2-npc/HitEngineState.cs
   * Brave & Coward script
   * The coward enemy: when there are 2 enemies -> the enemy's target is the farthest from the player
   * The brave enemy: when one of the enemies dead -> the enemy's target is the closest from player  
