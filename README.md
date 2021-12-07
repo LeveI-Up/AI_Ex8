@@ -2,7 +2,7 @@
 
 In this homework I took the original game from Erel github and change it to make it a result for the tasks.
 
-For task 8: [here](https://github.com/LeveI-Up/Tiles_Ex7/blob/main/%D7%9E%D7%98%D7%9C%D7%94%207.pdf)
+For task 8: [here](https://github.com/LeveI-Up/AI_Ex8/blob/main/%D7%9E%D7%98%D7%9C%D7%94%208.pdf)
 
 This is a part of week 8 weekly task.
 In this game i added 3 levels - in each level: the size of the map is bigger & the number of enemies is increasing.
