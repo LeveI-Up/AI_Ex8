@@ -8,7 +8,7 @@ This is a part of week 8 weekly task.
 In this game i added 3 levels - in each level: the size of the map is bigger & the number of enemies is increasing.
 The player need to reach to the gate in order to get to the next level.
 ### Changes:
-  * Added jump force [here](https://github.com/LeveI-Up/AI_Ex8/blob/main/Assets/Scripts/1-player/CharacterKeyboardMover.cs)
+  * Added jump force (by clicking space) [here](https://github.com/LeveI-Up/AI_Ex8/blob/main/Assets/Scripts/1-player/CharacterKeyboardMover.cs)
   * Added 2 weapons
   * Added shot option (by pressing the left mouse button) [here](https://github.com/LeveI-Up/AI_Ex8/blob/main/Assets/Gun.cs)
   * Option the switch between the 2 weapons - by clicking 1 or 2 on the keyboard [here](https://github.com/LeveI-Up/AI_Ex8/blob/main/Assets/WeaponSwitching.cs)
