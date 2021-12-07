@@ -1,19 +1,23 @@
 # AI_Ex8
 
-In this homework i took the original game from Erel github and change it to make it a result for the tasks.
+In this homework I took the original game from Erel github and change it to make it a result for the tasks.
 
-For task F: [here](https://github.com/LeveI-Up/Tiles_Ex7/blob/main/%D7%9E%D7%98%D7%9C%D7%94%207.pdf)
+For task 8: [here](https://github.com/LeveI-Up/Tiles_Ex7/blob/main/%D7%9E%D7%98%D7%9C%D7%94%207.pdf)
 
-This is a part of week 7 weekly task.
+This is a part of week 8 weekly task.
 In this game i added 3 levels - in each level: the size of the map is bigger & the number of enemies is increasing.
 The player need to reach to the gate in order to get to the next level.
 ### Changes:
-  * Added 3 levels
-  * The size of the grid getting bigger & the number of enemies is increasing
-  * Added gate with a Collider in order to rich the next level
-  * 2 functions for calculating the distance & position between the nearest and farthest floors, so the player and the gate can be initialized on both sides of the map [here](https://github.com/LeveI-Up/Tiles_Ex7/blob/main/Assets/Scripts/4-generation/TilemapCaveGenerator.cs)
-  * Added GateToNextLevel script in order to load the next level [here](https://github.com/LeveI-Up/Tiles_Ex7/blob/main/Assets/Scripts/4-generation/GateToNextLevel.cs)
+  * Added jump force
+  * Added 2 weapons
+  * Option the switch between the 2 weapons - by clicking 1 or 2 on the keyboard
+  * Scripts & effects for the guns - for switching & lights effects when the player shots
+  * Added life to the enemies - when the enemy's health reaches 0, he dies
+  * Added HitEngineState: in this state the enemy cought the player and can go and destroy the engine
+  * Brave & Coward script
+  * The coward enemy: when there are 2 enemies -> the enemy's target is the farthest from the player
+  * The brave enemy: when one of the enemies dead -> the enemy's target is the closest from player  
  
-  For playing the game click [here](https://almogre.itch.io/tiles-ex7) 
+  For playing the game click [here](https://almogre.itch.io/ai-ex8) 
   
-  Find the yellow gate to rich the next level GOOD LUCK!
+  Kill the enemies to defend the engine GOOD LUCK!
