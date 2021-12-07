@@ -11,8 +11,10 @@ public class CharacterKeyboardMover: MonoBehaviour {
     [SerializeField] float speed = 3.5f;
     [SerializeField] float gravity = 9.81f;
     [SerializeField] float jumpForce = 5f;
+    
 
     private float direction_y;
+    
 
     private CharacterController cc;
     void Start() {
@@ -31,12 +33,12 @@ public class CharacterKeyboardMover: MonoBehaviour {
             float z = Input.GetAxis("Vertical");
             velocity.x = x * speed;
             velocity.z = z * speed;*/
+            
             if (Input.GetButtonDown("Jump"))
             {
-                Debug.Log("aaaaa");
-                print("aaaaa");
-                direction_y = jumpForce * Time.deltaTime;
+                direction_y = jumpForce ;
             }
+           
 
         }/* else {
             direction_y -= gravity*Time.deltaTime;

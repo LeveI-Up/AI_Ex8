@@ -8,8 +8,18 @@ public class ChaserState : State
 {
     public override State RunCurrentState()
     {
-        Debug.Log("ChaserState");
-        return this;
+
+        if (playerDied == true)
+        {
+            Debug.Log("HitEngineState");
+            return this;
+        }
+        else
+        {
+            Debug.Log("ChaserState");
+            return this;
+        }
+        
     }
 
     [Tooltip("The object that this enemy chases after")]
@@ -21,6 +31,8 @@ public class ChaserState : State
 
     private Animator animator;
     private NavMeshAgent navMeshAgent;
+    private HitEngineState hitEngine;
+    public bool playerDied;
 
     private void Start()
     {
@@ -33,10 +45,18 @@ public class ChaserState : State
         playerPosition = player.transform.position;
         float distanceToPlayer = Vector3.Distance(playerPosition, transform.position);
 
-        if (distanceToPlayer <= 5f)
+        if (distanceToPlayer <= 5f && distanceToPlayer > 1.5f && playerDied==false)
         {
             FacePlayer();
             navMeshAgent.SetDestination(playerPosition);
+
+            
+        }
+        if (distanceToPlayer <= 1)
+        {
+            playerDied = true;
+            Vector3 target = new Vector3(-17.48f, 12.2f, 10.57f);
+            navMeshAgent.SetDestination(target);
         }
     }
 

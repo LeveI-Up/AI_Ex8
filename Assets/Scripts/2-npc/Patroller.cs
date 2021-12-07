@@ -2,6 +2,7 @@
 using UnityEngine.AI;
 
 
+
 /**
  * This component represents an NPC that patrols randomly between targets.
  * The targets are all the objects with a Target component inside a given folder.
@@ -27,13 +28,22 @@ public class Patroller: MonoBehaviour {
     private Animator animator;
     private float rotationSpeed = 5f;
 
+    [SerializeField] private Target braveTarget = null;
+    [SerializeField] private Target cowardTarget = null;
+    [SerializeField] GameObject player = null;
+    [SerializeField] GameObject enemy2 = null;
+    private bool isBrave = false;
+    private float cowardPos = -1f;
+    private float bravePos = 1000f;
+
     private void Start() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
         allTargets = targetFolder.GetComponentsInChildren<Target>(false); // false = get components in active children only
         Debug.Log("Found " + allTargets.Length + " active targets.");
-        SelectNewTarget();
+        //SelectNewTarget();
+        SelectCowardTarget();
     }
 
     private void SelectNewTarget() {
@@ -44,14 +54,48 @@ public class Patroller: MonoBehaviour {
         timeToWaitAtTarget = Random.Range(minWaitAtTarget, maxWaitAtTarget);
     }
 
+    private void SelectCowardTarget()
+    {
+        foreach(Target tempTarget in allTargets)
+        {
+            float tempPos = Vector3.Distance(player.transform.position , tempTarget.transform.position);
+            if (tempPos > cowardPos)
+            {
+                cowardPos = tempPos;
+                cowardTarget = tempTarget;
+            }
+        }
+        navMeshAgent.SetDestination(cowardTarget.transform.position);
+        //if (animator) animator.SetBool("Run", true);
+       // timeToWaitAtTarget = Random.Range(minWaitAtTarget, maxWaitAtTarget);
+    }
+    private void SelectBraveTarget()
+    {
+        foreach (Target tempTarget in allTargets)
+        {
+            float tempPos = Vector3.Distance(player.transform.position, tempTarget.transform.position);
+            if (tempPos < bravePos)
+            {
+                bravePos = tempPos;
+                braveTarget = tempTarget;
+            }
+        }
+        navMeshAgent.SetDestination(braveTarget.transform.position);
+        //if (animator) animator.SetBool("Run", true);
+        // timeToWaitAtTarget = Random.Range(minWaitAtTarget, maxWaitAtTarget);
+    }
 
     private void Update() {
+        if (enemy2 == null)
+        {
+            SelectBraveTarget();
+        }       
         if (navMeshAgent.hasPath) {
             FaceDestination();
         } else {   // we are at the target
             //if (animator) animator.SetBool("Run", false);
             timeToWaitAtTarget -= Time.deltaTime;
-            if (timeToWaitAtTarget <= 0)
+            if (timeToWaitAtTarget <= 0 && isBrave==true)
                 SelectNewTarget();
         }
     }
