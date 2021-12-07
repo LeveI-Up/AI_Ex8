@@ -10,7 +10,7 @@ The player need to reach to the gate in order to get to the next level.
 ### Changes:
   * Added jump force (by clicking space) [here](https://github.com/LeveI-Up/AI_Ex8/blob/main/Assets/Scripts/1-player/CharacterKeyboardMover.cs)
   * Added 2 weapons
-  * Added shot option (by pressing the left mouse button) [here](https://github.com/LeveI-Up/AI_Ex8/blob/main/Assets/Gun.cs)
+  * Added shot option (by pressing the left mouse button) and a red scope [here](https://github.com/LeveI-Up/AI_Ex8/blob/main/Assets/Gun.cs)
   * Option the switch between the 2 weapons - by clicking 1 or 2 on the keyboard [here](https://github.com/LeveI-Up/AI_Ex8/blob/main/Assets/WeaponSwitching.cs)
   * Scripts & effects for the guns - for switching & lights effects when the player shots
   * Added life to the enemies - when the enemy's health reaches 0, he dies
